@@ -6,10 +6,10 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class GetUserTest {
+public class GetFullUserTest {
 
     @Test
-    public void getUserDataTest() {
+    public void getFullUserDataTest() {
 
         RestAssured.baseURI = "http://users.bugred.ru/tasks/rest";
         RequestSpecification httpRequest = RestAssured.given();
@@ -20,7 +20,7 @@ public class GetUserTest {
         httpRequest.body(requestParams.toJSONString());
 
 
-        Response response = httpRequest.request(Method.GET, "/getuser");
+        Response response = httpRequest.request(Method.GET, "/getuserfull");
 
         String responseBody = response.getBody().asPrettyString();
         System.out.println("Response body is: " + responseBody);
