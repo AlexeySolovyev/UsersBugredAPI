@@ -2,8 +2,8 @@ import io.restassured.RestAssured;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import junit.framework.Assert;
 import org.json.simple.JSONObject;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CreateCompanyTest {
@@ -11,7 +11,7 @@ public class CreateCompanyTest {
     @Test
     public void CreateNewCompanyTest() {
 
-        RestAssured.baseURI = "http://users.bugred.ru/task/rest";
+        RestAssured.baseURI = "http://users.bugred.ru/tasks/rest";
         RequestSpecification httpRequest = RestAssured.given();
 
         JSONObject requestParams = new JSONObject();
