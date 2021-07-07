@@ -6,24 +6,19 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Array;
-import java.util.Objects;
-
 public class CreateUserTest {
 
     @Test
-    void CreateNewUserTest() {
-
+    public void CreateNewUserTest() {
 
         RestAssured.baseURI = "http://users.bugred.ru/tasks/rest";
         RequestSpecification httpRequest = RestAssured.given();
-        int[] companies = {34, 35};
 
         JSONObject requestParams = new JSONObject();
         requestParams.put("email", "test42@gmail.com");
         requestParams.put("name", "Anon");
         requestParams.put("tasks", 1);
-        requestParams.put("companies", companies);
+        requestParams.put("companies", "[34, 35]");
         requestParams.put("hobby", "hockey");
         requestParams.put("adres", "T-street, 24");
         requestParams.put("name1", "Anonymous");
@@ -52,7 +47,7 @@ public class CreateUserTest {
         Assert.assertEquals(statusLine, "HTTP/1.1 200 OK");
 
         int statusCode = response.statusCode();
-        System.out.println("Status Code is: " + statusCode);
+        System.out.println("Status code is: " + statusCode);
         Assert.assertEquals(statusCode, 200);
 
 
