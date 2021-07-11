@@ -13,7 +13,6 @@ public class CreateUserTest {
 
         RestAssured.baseURI = "http://users.bugred.ru/tasks/rest";
         RequestSpecification httpRequest = RestAssured.given();
-
         JSONObject requestParams = new JSONObject();
         requestParams.put("email", "test42@gmail.com");
         requestParams.put("name", "Anon");

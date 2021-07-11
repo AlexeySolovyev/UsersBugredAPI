@@ -24,7 +24,6 @@ public class CreateCompanyTest {
         httpRequest.body(requestParams.toJSONString());
 
         Response response = httpRequest.request(Method.POST, "/createcompany");
-
         String responseBody = response.getBody().asPrettyString();
         System.out.println("Response body is: " + responseBody);
 
